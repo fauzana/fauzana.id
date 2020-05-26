@@ -35,7 +35,8 @@ let urls = {
   "waiting": "https://medium.com/@fkadev/managing-complex-waiting-experiences-on-web-uis-29534d2d92a8"
 };
 if (params[0] === "s") {
-  jumpTo = urls[params[1]];
+  const urlParams = new URLSearchParams(window.location.search);
+  jumpTo = urls[urlParams.get('q')];
 }
 if (!jumpTo) {
   jumpTo = "http://fauzana.id";
